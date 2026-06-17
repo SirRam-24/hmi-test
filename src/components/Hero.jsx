@@ -5,7 +5,7 @@ import ScrollReveal from './ScrollReveal';
 
 export default function Hero() {
   return (
-    <section id="home" className="relative pt-32 pb-0 overflow-hidden min-h-screen flex flex-col justify-between bg-grid-pattern">
+    <section id="home" className="relative pt-32 pb-16 overflow-hidden min-h-screen flex flex-col justify-between bg-grid-pattern">
       
       {/* Dynamic Background Glowing Blobs */}
       <div className="absolute top-1/4 left-10 w-72 h-72 rounded-full bg-indigo-200/40 blur-3xl animate-blob -z-10"></div>
@@ -208,24 +208,6 @@ export default function Hero() {
           </ScrollReveal>
         </div>
 
-      </div>
-
-      {/* "Already used by Best in the Game" Marquee logos bar */}
-      <div className="w-full border-t border-slate-100 bg-white/35 py-10 mt-6 z-10 relative">
-        <div className="max-w-7xl mx-auto px-6 text-center space-y-6">
-          <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest block">
-            Already used by <span className="text-indigo-600 font-black">Best in the Game</span>
-          </span>
-          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-60">
-            <span className="text-base font-extrabold text-orange-500 tracking-wider">KIDO</span>
-            <span className="text-base font-black text-emerald-600 tracking-wider">Habit2Fit</span>
-            <span className="text-base font-extrabold text-slate-700 tracking-wider">JEFFS GROUP</span>
-            <span className="text-base font-bold text-pink-500 tracking-tight flex items-center gap-1">
-              <span className="text-pink-600 text-xs">❤</span> HerCircle Care
-            </span>
-            <span className="text-base font-semibold text-amber-600 tracking-widest">VIRAMORE</span>
-          </div>
-        </div>
       </div>
     </section>
   );
