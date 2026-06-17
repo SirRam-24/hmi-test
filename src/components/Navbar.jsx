@@ -23,8 +23,6 @@ export default function Navbar() {
     { path: '/', label: 'HOME', icon: Home },
     { path: '/services', label: 'SERVICES', icon: Briefcase },
     { path: '/portfolio', label: 'PORTFOLIO', icon: Layers },
-    // { path: '/pricing', label: 'PRICING', icon: Tag },
-
     { path: '/about', label: 'ABOUT', icon: Info },
 
     { path: '/contact', label: 'CONTACT', icon: Mail },

@@ -69,7 +69,8 @@ export default function Hero() {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
               <Link 
-                to="/pricing"
+                to="/contact"
+                state={{ service: "Custom Website Package" }}
                 className="group relative flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-4 px-8 rounded-full shadow-lg shadow-indigo-200/50 hover:shadow-xl hover:shadow-indigo-300/60 hover:-translate-y-0.5 transition-all duration-300 text-sm"
               >
                 <span>Build My Website</span>

@@ -44,7 +44,7 @@ export default function Chatbot() {
       
       const lowerQuery = query.toLowerCase();
       if (lowerQuery.includes('plan') || lowerQuery.includes('pricing') || lowerQuery.includes('price')) {
-        botResponse = "We offer transparent pricing structures! Our Startup plan is perfect for landing pages, our Business plan is tailored for growing businesses, and we build custom portals under the Custom App plan. Check our Pricing page or use our Cost Estimator!";
+        botResponse = "We offer custom-tailored pricing packages for every project! You can check our Cost Estimator tool to calculate project pricing or reach out to us on our Contact page to get a direct quote.";
       } else if (lowerQuery.includes('demo') || lowerQuery.includes('free') || lowerQuery.includes('try')) {
         botResponse = "Excellent choice! I can set up a free custom design mockup for your business today. Please fill out our form on the Contact page, or leave your email here, and our design consultant will get in touch!";
       } else if (lowerQuery.includes('24h') || lowerQuery.includes('delivery') || lowerQuery.includes('guarantee') || lowerQuery.includes('time')) {
@@ -60,7 +60,7 @@ export default function Chatbot() {
   const suggestionChips = [
     { label: '💡 Recommend Plan', value: 'Recommend Plan' },
     { label: '⚡ 24h Delivery', value: '24h Delivery' },
-    { label: '💳 Compare Pricing', value: 'Compare Pricing' }
+    { label: '💰 Estimate Cost', value: 'Estimate Cost' }
   ];
 
   return (

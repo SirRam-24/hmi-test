@@ -19,8 +19,7 @@ export default function Footer() {
   const navLinks = [
     { label: 'HOME', path: '/' },
     { label: 'SERVICES', path: '/services' },
-    { label: 'PORTFOLIO', path: '/portfolio' },
-    { label: 'PRICING', path: '/pricing' }
+    { label: 'PORTFOLIO', path: '/portfolio' }
   ];
 
   const resourceLinks = [

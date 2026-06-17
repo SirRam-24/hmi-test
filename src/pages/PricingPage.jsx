@@ -1,10 +1,4 @@
-import React from 'react';
-import Pricing from '../components/Pricing';
-
+// Deprecated and removed
 export default function PricingPage() {
-  return (
-    <div className="pt-20">
-      <Pricing />
-    </div>
-  );
+  return null;
 }
