@@ -1,9 +1,18 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import { Shield, FileText, Lock, Eye } from 'lucide-react';
 
 export default function TermsPage() {
   return (
-    <div className="pt-32 pb-24 relative overflow-hidden bg-grid-pattern">
+    <>
+      <SEO 
+        title="Terms of Service & Privacy Policy"
+        description="Read the HMI Digital Solutions legal policy, service terms, privacy rules, data handling practices, and intellectual property ownership rules."
+        keywords="HMI Digital terms, privacy policy, legal terms, web design contract, intellectual property ownership"
+        canonicalUrl="/terms"
+      />
+      <div className="pt-32 pb-24 relative overflow-hidden bg-grid-pattern">
+
       {/* Background accents */}
       <div className="absolute top-1/4 left-10 w-72 h-72 rounded-full bg-indigo-100/30 blur-3xl -z-10"></div>
       <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-purple-100/20 blur-3xl -z-10"></div>
@@ -79,5 +88,6 @@ export default function TermsPage() {
 
       </div>
     </div>
+    </>
   );
 }

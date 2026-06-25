@@ -397,6 +397,9 @@ export default function Services() {
       {/* Detailed Service Popup Modal */}
       {selectedService && (
         <div 
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-title"
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md transition-opacity duration-300 animate-in fade-in duration-200"
           onClick={() => setSelectedService(null)}
         >
@@ -412,7 +415,7 @@ export default function Services() {
                   {React.createElement(selectedService.visual)}
                 </div>
                 <div>
-                  <h3 className="text-lg md:text-xl font-bold text-slate-900 tracking-tight">
+                  <h3 id="modal-title" className="text-lg md:text-xl font-bold text-slate-900 tracking-tight">
                     {selectedService.title}
                   </h3>
                   <p className="text-[10px] text-indigo-500 uppercase font-extrabold tracking-widest mt-0.5">
@@ -422,9 +425,10 @@ export default function Services() {
               </div>
               <button 
                 onClick={() => setSelectedService(null)}
+                aria-label="Close service specifications"
                 className="p-2 rounded-full bg-slate-50 border border-slate-200/40 text-slate-400 hover:text-slate-800 hover:bg-slate-100 transition-colors shadow-sm"
               >
-                <X className="w-5 h-5" />
+                <X className="w-5 h-5" aria-hidden="true" />
               </button>
             </div>
 

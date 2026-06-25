@@ -103,7 +103,10 @@ export default function About() {
           <div className="flex flex-col sm:flex-row items-center gap-6 p-6 bg-white/80 backdrop-blur-md border border-slate-200/60 rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 max-w-sm w-full text-left">
             <img
               src="/thiru.jpg"
-              alt="Manya Phalke"
+              alt="K. Thirulingeshwar, CEO and Founder of HMI Digital"
+              width="80"
+              height="80"
+              loading="lazy"
               className="w-20 h-20 rounded-full object-cover border-2 border-indigo-100/80 shadow-sm"
             />
             <div className="space-y-2 text-center sm:text-left">

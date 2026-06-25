@@ -15,6 +15,7 @@ export default function Chatbot() {
   ]);
 
   const messagesEndRef = useRef(null);
+  const timerRef = useRef(null);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -25,6 +26,14 @@ export default function Chatbot() {
       scrollToBottom();
     }
   }, [chatOpen, chatMessages]);
+
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+    };
+  }, []);
 
   const handleSendMessage = (textToSend) => {
     const query = textToSend || userInput;
@@ -38,8 +47,12 @@ export default function Chatbot() {
       setUserInput('');
     }
 
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
+
     // Trigger bot response
-    setTimeout(() => {
+    timerRef.current = setTimeout(() => {
       let botResponse = "That sounds interesting! HMI specializes in custom React web apps and high-performance websites. Would you like to check out our cost estimator or talk to a consultant?";
       
       const lowerQuery = query.toLowerCase();
@@ -54,6 +67,7 @@ export default function Chatbot() {
       }
 
       setChatMessages(prev => [...prev, { sender: 'bot', text: botResponse }]);
+      timerRef.current = null;
     }, 1000);
   };
 

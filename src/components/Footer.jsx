@@ -19,12 +19,15 @@ export default function Footer() {
   const navLinks = [
     { label: 'HOME', path: '/' },
     { label: 'SERVICES', path: '/services' },
-    { label: 'PORTFOLIO', path: '/portfolio' }
+    { label: 'PORTFOLIO', path: '/portfolio' },
+    { label: 'APP ESTIMATOR', path: '/calculator' },
   ];
 
   const resourceLinks = [
     { label: 'ABOUT', path: '/about' },
-    { label: 'CONTACT', path: '/contact' }
+    { label: 'OUR TEAM', path: '/team' },
+    { label: 'CONTACT', path: '/contact' },
+    { label: 'TERMS & PRIVACY', path: '/terms' },
   ];
 
   return (
@@ -74,17 +77,17 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-3 pt-2">
-            <a href="#" className="p-2 rounded-lg bg-slate-50 border border-slate-200/60 text-slate-500 hover:bg-slate-100 hover:text-slate-800 transition-colors">
-              <Github className="w-4 h-4" />
+            <a href="#" aria-label="HMI Digital GitHub" className="p-2 rounded-lg bg-slate-50 border border-slate-200/60 text-slate-500 hover:bg-slate-100 hover:text-slate-800 transition-colors">
+              <Github className="w-4 h-4" aria-hidden="true" />
             </a>
-            <a href="#" className="p-2 rounded-lg bg-slate-50 border border-slate-200/60 text-slate-500 hover:bg-slate-100 hover:text-slate-800 transition-colors">
-              <Linkedin className="w-4 h-4" />
+            <a href="#" aria-label="HMI Digital LinkedIn" className="p-2 rounded-lg bg-slate-50 border border-slate-200/60 text-slate-500 hover:bg-slate-100 hover:text-slate-800 transition-colors">
+              <Linkedin className="w-4 h-4" aria-hidden="true" />
             </a>
-            <a href="#" className="p-2 rounded-lg bg-slate-50 border border-slate-200/60 text-slate-500 hover:bg-slate-100 hover:text-slate-800 transition-colors">
-              <Twitter className="w-4 h-4" />
+            <a href="#" aria-label="HMI Digital Twitter" className="p-2 rounded-lg bg-slate-50 border border-slate-200/60 text-slate-500 hover:bg-slate-100 hover:text-slate-800 transition-colors">
+              <Twitter className="w-4 h-4" aria-hidden="true" />
             </a>
-            <a href="mailto:hello@hmi.digital" className="p-2 rounded-lg bg-slate-50 border border-slate-200/60 text-slate-500 hover:bg-slate-100 hover:text-slate-800 transition-colors">
-              <Mail className="w-4 h-4" />
+            <a href="mailto:hello@hmi.digital" aria-label="HMI Digital Email" className="p-2 rounded-lg bg-slate-50 border border-slate-200/60 text-slate-500 hover:bg-slate-100 hover:text-slate-800 transition-colors">
+              <Mail className="w-4 h-4" aria-hidden="true" />
             </a>
           </div>
         </div>
@@ -145,6 +148,8 @@ export default function Footer() {
               <input 
                 type="email" 
                 required
+                id="newsletter-email"
+                aria-label="Email address for newsletter"
                 placeholder="you@email.com" 
                 value={newsEmail}
                 onChange={(e) => setNewsEmail(e.target.value)}
@@ -152,9 +157,10 @@ export default function Footer() {
               />
               <button 
                 type="submit"
+                aria-label="Subscribe to newsletter"
                 className="bg-indigo-600 hover:bg-indigo-700 text-white p-3 rounded-xl shadow-md transition-colors"
               >
-                <Send className="w-4 h-4" />
+                <Send className="w-4 h-4" aria-hidden="true" />
               </button>
             </form>
           )}

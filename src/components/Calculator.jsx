@@ -120,9 +120,9 @@ export default function Calculator() {
             
             {/* 1. Project Platform */}
             <div className="space-y-4 text-left">
-              <label className="text-sm font-bold text-slate-800 uppercase tracking-wider block">
+              <span className="text-sm font-bold text-slate-800 uppercase tracking-wider block">
                 1. Select Platform
-              </label>
+              </span>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {[
                   { id: 'web', label: 'Web App' },
@@ -133,6 +133,7 @@ export default function Calculator() {
                   <button
                     key={plat.id}
                     onClick={() => setPlatform(plat.id)}
+                    aria-pressed={platform === plat.id}
                     className={`py-3.5 px-4 rounded-2xl text-xs font-bold transition-all ${
                       platform === plat.id
                         ? 'bg-indigo-600 text-white shadow-md shadow-indigo-150'
@@ -148,7 +149,7 @@ export default function Calculator() {
             {/* 2. Number of screens */}
             <div className="space-y-4 text-left">
               <div className="flex justify-between items-center">
-                <label className="text-sm font-bold text-slate-800 uppercase tracking-wider block">
+                <label htmlFor="project-scale-range" className="text-sm font-bold text-slate-800 uppercase tracking-wider block">
                   2. Project Scale (Screens / Pages)
                 </label>
                 <span className="bg-indigo-50 text-indigo-600 font-extrabold px-3 py-1 rounded-lg text-sm">
@@ -157,6 +158,7 @@ export default function Calculator() {
               </div>
               <input
                 type="range"
+                id="project-scale-range"
                 min="1"
                 max="30"
                 value={pages}
@@ -172,9 +174,9 @@ export default function Calculator() {
 
             {/* 3. Core features */}
             <div className="space-y-4 text-left">
-              <label className="text-sm font-bold text-slate-800 uppercase tracking-wider block">
+              <span className="text-sm font-bold text-slate-800 uppercase tracking-wider block">
                 3. Choose Core Features
-              </label>
+              </span>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {[
                   { id: 'database', label: 'Database & CMS Integration', cost: '+$500' },
@@ -188,6 +190,7 @@ export default function Calculator() {
                   <button
                     key={feat.id}
                     onClick={() => toggleFeature(feat.id)}
+                    aria-pressed={features[feat.id]}
                     className={`flex items-center justify-between p-4 rounded-2xl border text-xs font-bold text-left transition-all ${
                       features[feat.id]
                         ? 'bg-purple-50/70 border-purple-300 text-purple-700 shadow-sm'
@@ -373,36 +376,50 @@ export default function Calculator() {
                       Request Final Proposal
                     </span>
                     <div className="grid grid-cols-2 gap-3">
-                      <input 
-                        type="text" 
-                        required
-                        placeholder="Your Name"
-                        value={contactName}
-                        onChange={(e) => setContactName(e.target.value)}
-                        className="bg-slate-800/80 border border-slate-800 focus:border-indigo-500 focus:outline-none rounded-xl px-4 py-3 text-xs w-full transition-colors text-white placeholder-slate-500"
-                      />
-                      <input 
-                        type="email" 
-                        required
-                        placeholder="Your Email"
-                        value={contactEmail}
-                        onChange={(e) => setContactEmail(e.target.value)}
-                        className="bg-slate-800/80 border border-slate-800 focus:border-indigo-500 focus:outline-none rounded-xl px-4 py-3 text-xs w-full transition-colors text-white placeholder-slate-500"
-                      />
+                      <div>
+                        <label htmlFor="calc-name" className="sr-only">Your Name</label>
+                        <input 
+                          type="text" 
+                          id="calc-name"
+                          required
+                          placeholder="Your Name"
+                          autoComplete="name"
+                          value={contactName}
+                          onChange={(e) => setContactName(e.target.value)}
+                          className="bg-slate-800/80 border border-slate-800 focus:border-indigo-500 focus:outline-none rounded-xl px-4 py-3 text-xs w-full transition-colors text-white placeholder-slate-500"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="calc-email" className="sr-only">Your Email Address</label>
+                        <input 
+                          type="email" 
+                          id="calc-email"
+                          required
+                          placeholder="Your Email"
+                          autoComplete="email"
+                          value={contactEmail}
+                          onChange={(e) => setContactEmail(e.target.value)}
+                          className="bg-slate-800/80 border border-slate-800 focus:border-indigo-500 focus:outline-none rounded-xl px-4 py-3 text-xs w-full transition-colors text-white placeholder-slate-500"
+                        />
+                      </div>
                     </div>
-                    <textarea 
-                      placeholder="Add any extra custom requirements..."
-                      rows="2"
-                      value={contactMessage}
-                      onChange={(e) => setContactMessage(e.target.value)}
-                      className="bg-slate-800/80 border border-slate-800 focus:border-indigo-500 focus:outline-none rounded-xl px-4 py-3 text-xs w-full resize-none transition-colors text-white placeholder-slate-500"
-                    ></textarea>
+                    <div>
+                      <label htmlFor="calc-message" className="sr-only">Additional Requirements</label>
+                      <textarea 
+                        id="calc-message"
+                        placeholder="Add any extra custom requirements..."
+                        rows="2"
+                        value={contactMessage}
+                        onChange={(e) => setContactMessage(e.target.value)}
+                        className="bg-slate-800/80 border border-slate-800 focus:border-indigo-500 focus:outline-none rounded-xl px-4 py-3 text-xs w-full resize-none transition-colors text-white placeholder-slate-500"
+                      ></textarea>
+                    </div>
                     
                     <button
                       type="submit"
                       className="w-full flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-750 text-white text-xs font-bold py-3.5 px-4 rounded-xl transition-all shadow-md shadow-indigo-100"
                     >
-                      <Send className="w-3.5 h-3.5" />
+                      <Send className="w-3.5 h-3.5" aria-hidden="true" />
                       <span>Send Project Spec Sheet</span>
                     </button>
                   </form>

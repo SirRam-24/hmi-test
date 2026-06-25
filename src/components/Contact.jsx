@@ -151,67 +151,82 @@ export default function Contact() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {/* Name input */}
                   <div className="space-y-2">
-                    <label className="text-xs font-bold text-slate-700 uppercase tracking-wider block">
+                    <label htmlFor="contact-name" className="text-xs font-bold text-slate-700 uppercase tracking-wider block">
                       Your Name
                     </label>
                     <input 
                       type="text" 
+                      id="contact-name"
                       name="name"
                       placeholder="John Doe"
+                      autoComplete="name"
+                      aria-describedby={errors.name ? "contact-name-error" : undefined}
+                      aria-invalid={!!errors.name}
                       value={formData.name}
                       onChange={handleChange}
                       className={`w-full bg-slate-50/50 border ${errors.name ? 'border-red-400 focus:border-red-500' : 'border-slate-200 focus:border-indigo-500'} focus:outline-none rounded-xl px-4 py-3.5 text-xs text-slate-800 placeholder-slate-400 transition-colors`}
                     />
-                    {errors.name && <span className="text-[10px] text-red-500 font-semibold">{errors.name}</span>}
+                    {errors.name && <span id="contact-name-error" className="text-[10px] text-red-500 font-semibold">{errors.name}</span>}
                   </div>
 
                   {/* Email input */}
                   <div className="space-y-2">
-                    <label className="text-xs font-bold text-slate-700 uppercase tracking-wider block">
+                    <label htmlFor="contact-email" className="text-xs font-bold text-slate-700 uppercase tracking-wider block">
                       Email Address
                     </label>
                     <input 
                       type="email" 
+                      id="contact-email"
                       name="email"
                       placeholder="john@example.com"
+                      autoComplete="email"
+                      aria-describedby={errors.email ? "contact-email-error" : undefined}
+                      aria-invalid={!!errors.email}
                       value={formData.email}
                       onChange={handleChange}
                       className={`w-full bg-slate-50/50 border ${errors.email ? 'border-red-400 focus:border-red-500' : 'border-slate-200 focus:border-indigo-500'} focus:outline-none rounded-xl px-4 py-3.5 text-xs text-slate-800 placeholder-slate-400 transition-colors`}
                     />
-                    {errors.email && <span className="text-[10px] text-red-500 font-semibold">{errors.email}</span>}
+                    {errors.email && <span id="contact-email-error" className="text-[10px] text-red-500 font-semibold">{errors.email}</span>}
                   </div>
                 </div>
 
                 {/* Subject input */}
                 <div className="space-y-2">
-                  <label className="text-xs font-bold text-slate-700 uppercase tracking-wider block">
+                  <label htmlFor="contact-subject" className="text-xs font-bold text-slate-700 uppercase tracking-wider block">
                     Subject Line
                   </label>
                   <input 
                     type="text" 
+                    id="contact-subject"
                     name="subject"
                     placeholder="Project specs / consultation..."
+                    autoComplete="off"
+                    aria-describedby={errors.subject ? "contact-subject-error" : undefined}
+                    aria-invalid={!!errors.subject}
                     value={formData.subject}
                     onChange={handleChange}
                     className={`w-full bg-slate-50/50 border ${errors.subject ? 'border-red-400 focus:border-red-500' : 'border-slate-200 focus:border-indigo-500'} focus:outline-none rounded-xl px-4 py-3.5 text-xs text-slate-800 placeholder-slate-400 transition-colors`}
                   />
-                  {errors.subject && <span className="text-[10px] text-red-500 font-semibold">{errors.subject}</span>}
+                  {errors.subject && <span id="contact-subject-error" className="text-[10px] text-red-500 font-semibold">{errors.subject}</span>}
                 </div>
 
                 {/* Message input */}
                 <div className="space-y-2">
-                  <label className="text-xs font-bold text-slate-700 uppercase tracking-wider block">
+                  <label htmlFor="contact-message" className="text-xs font-bold text-slate-700 uppercase tracking-wider block">
                     Detailed Message
                   </label>
                   <textarea 
+                    id="contact-message"
                     name="message"
                     rows="4"
                     placeholder="Tell us about your web project timeline, scope, and goals..."
+                    aria-describedby={errors.message ? "contact-message-error" : undefined}
+                    aria-invalid={!!errors.message}
                     value={formData.message}
                     onChange={handleChange}
                     className={`w-full bg-slate-50/50 border ${errors.message ? 'border-red-400 focus:border-red-500' : 'border-slate-200 focus:border-indigo-500'} focus:outline-none rounded-xl px-4 py-3.5 text-xs text-slate-800 placeholder-slate-400 transition-colors resize-none`}
                   ></textarea>
-                  {errors.message && <span className="text-[10px] text-red-500 font-semibold">{errors.message}</span>}
+                  {errors.message && <span id="contact-message-error" className="text-[10px] text-red-500 font-semibold">{errors.message}</span>}
                 </div>
 
                 {/* Submit button */}

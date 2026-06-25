@@ -1,0 +1,16 @@
+{
+  "name": "HMI Digital Solutions",
+  "short_name": "HMI Digital",
+  "description": "High-performance React web applications, custom databases, and modern software packages.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#6366f1",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

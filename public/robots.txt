@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hmi-proj.vercel.app/sitemap.xml
